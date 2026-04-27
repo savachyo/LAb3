@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №3 - iOS Gradient</title>
+    <style>
+        /* Анімований iOS градієнт на весь екран */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            color: #1d1d1f;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Налаштування градієнта */
+            background: linear-gradient(45deg, #ffb6ff, #b3cdd1, #9fa5d5, #c2e9fb);
+            background-size: 300% 300%;
+            animation: gradientAnimation 12s ease infinite;
+        }
+
+        /* Анімація плавного переливання градієнта */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* "Скляний" контейнер (Glassmorphism), щоб текст добре читався */
+        .glass-container {
+            background: rgba(255, 255, 255, 0.6); /* Напівпрозорий білий */
+            backdrop-filter: blur(20px); /* Ефект розмиття скла (Blur) */
+            -webkit-backdrop-filter: blur(20px); /* Для Safari */
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 32px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        h2 { font-weight: 700; font-size: 32px; letter-spacing: -0.5px; }
+        h3 { font-weight: 500; color: #555; margin-bottom: 30px; }
+
+        .content-block {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        /* Адаптивність для мобілок */
+        @media (max-width: 600px) {
+            .content-block {
+                flex-direction: column;
+            }
+            .glass-container {
+                padding: 20px;
+                border-radius: 24px;
+            }
+        }
+
+        .cat-image {
+            width: 300px;
+            height: auto;
+            border-radius: 18px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .description {
+            margin: 0;
+            text-align: left;
+            line-height: 1.5;
+            font-size: 17px;
+        }
+
+        .description a {
+            color: #007aff; /* Класичний синій колір посилань iOS */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .description a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .bold-column {
+            font-weight: 600;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="glass-container">
+    <h2>Лабораторна робота №3</h2>
+    <h3>Створення простої сторінки</h3>
+
+    <div class="content-block">
+        <img src="bengal-yuliya-4.jpg" alt="Бенгальський кіт" class="cat-image">
+
+        <p class="description">
+            <a href="#">Бенгальській породі котів</a> вдалося поєднати в собі ніжність домашніх
+            вихованців і грайливість і мисливські темпераменти диких звірів.
+            Найулюбленіша їхня гра - це гонитва за м'ячиком, іграшками або
+            комахами, які залетіли до квартири. До таких тварин потрібно ставитися з
+            особливою любов'ю, інакше вони можуть вирости дуже дикими. Однак,
+            якщо кіт бенгальської породи полюбить вас, він буде відданий вам
+            до кінця життя.
+        </p>
+    </div>
+
+    <table>
+        <tr>
+            <td class="bold-column">Країна і рік походження</td>
+            <td>США, 1961 рік</td>
+        </tr>
+        <tr>
+            <td class="bold-column">Тип хутра</td>
+            <td>короткошерста</td>
+        </tr>
+        <tr>
+            <td class="bold-column">Розмір</td>
+            <td>середній</td>
+        </tr>
+        <tr>
+            <td class="bold-column">Середня тривалість життя</td>
+            <td>12-15 років</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
